@@ -12,7 +12,7 @@ protocol SettingsViewControllerDelegate {
 }
 
 class MainViewController: UIViewController {
-    @IBOutlet var ButtonOutlet: UIBarButtonItem!
+    @IBOutlet var buttonOutlet: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -20,8 +20,9 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navigationVC = segue.destination as? UINavigationController else { return }
-        guard let settingsVC = navigationVC.topViewController as? SettingsViewController else { return }
+        // guard let navigationVC = segue.destination as? UINavigationController else { return }
+       // guard let settingsVC = navigationVC.topViewController as? SettingsViewController else { return }
+        guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.color = view.backgroundColor
         settingsVC.delegate = self
     }
@@ -32,6 +33,7 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: SettingsViewControllerDelegate {
+    
     func setCollor(for color: UIColor) {
         view.backgroundColor = color
         }

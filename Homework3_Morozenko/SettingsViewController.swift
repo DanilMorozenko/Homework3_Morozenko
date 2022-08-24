@@ -32,7 +32,7 @@ class SettingsViewController: UIViewController {
         screenView.layer.cornerRadius = screenView.frame.height / 8
         setupSliders()
         editLabels()
-        view.backgroundColor = color
+        screenView.backgroundColor = color
     }
 
     @IBAction func redSliderAction(_ sender: Any) {

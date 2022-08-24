@@ -90,9 +90,8 @@
                                     <action selector="blueSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="AlR-21-kVm"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IR-yS-6vp">
-                                <rect key="frame" x="133" y="440" width="56" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IR-yS-6vp">
+                                <rect key="frame" x="100" y="440" width="120" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save">
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
@@ -105,6 +104,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5IR-yS-6vp" secondAttribute="bottom" constant="97" id="0wP-e1-QDr"/>
+                            <constraint firstItem="5IR-yS-6vp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="50a-6U-z4o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CJc-a6-9hQ" secondAttribute="trailing" constant="60" id="66h-1b-D7K"/>
                             <constraint firstItem="U2m-Ns-ffg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="81" id="8vt-cN-5CX"/>
                             <constraint firstItem="LAI-m1-IXr" firstAttribute="top" secondItem="U2m-Ns-ffg" secondAttribute="bottom" constant="48" id="Czc-z0-t37"/>
@@ -124,6 +125,7 @@
                             <constraint firstItem="pCr-ye-w7O" firstAttribute="top" secondItem="CJc-a6-9hQ" secondAttribute="bottom" constant="18" id="dSA-KN-4AM"/>
                             <constraint firstItem="3XL-OD-UIz" firstAttribute="centerY" secondItem="OzD-dp-w3h" secondAttribute="centerY" id="jpw-io-PCB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCr-ye-w7O" secondAttribute="trailing" constant="60" id="kyv-nb-cW9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5IR-yS-6vp" secondAttribute="trailing" constant="100" id="r3j-k8-jic"/>
                             <constraint firstItem="jjG-Lf-TMu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="tAC-Yl-pxh"/>
                         </constraints>
                     </view>
@@ -164,7 +166,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="ButtonOutlet" destination="fnj-x5-cah" id="oek-7y-tNA"/>
+                        <outlet property="buttonOutlet" destination="fnj-x5-cah" id="oek-7y-tNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0p-wt-YYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
