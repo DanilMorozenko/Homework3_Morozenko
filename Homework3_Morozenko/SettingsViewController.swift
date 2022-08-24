@@ -7,40 +7,55 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+
+class SettingsViewController: UIViewController {
     @IBOutlet var screenView: UIView!
+    
     @IBOutlet var redLabelName: UILabel!
     @IBOutlet var greenLabelName: UILabel!
     @IBOutlet var blueLabelName: UILabel!
+    
     @IBOutlet var redCodeColor: UILabel!
     @IBOutlet var blueCodeColor: UILabel!
     @IBOutlet var greenCodeColor: UILabel!
+    
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
+    
+    
+    var delegate: SettingsViewControllerDelegate!
+    var color: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         screenView.layer.cornerRadius = screenView.frame.height / 8
         setupSliders()
         editLabels()
+        view.backgroundColor = color
     }
 
     @IBAction func redSliderAction(_ sender: Any) {
         redCodeColor.text = String(round(redSlider.value * 100) / 100)
-        screenView.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        screenView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
     
     @IBAction func greenSliderAction(_ sender: Any) {
         greenCodeColor.text = String(round(greenSlider.value * 100) / 100)
-        screenView.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        screenView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
     
     @IBAction func blueSliderAction(_ sender: Any) {
         blueCodeColor.text = String(round(blueSlider.value * 100) / 100)
-        screenView.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        screenView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
  
+   @IBAction func saveButtonAction() {
+       delegate.setCollor(for: screenView.backgroundColor ?? .white)
+        dismiss(animated: true)
+    }
+    
+    
     private func setupSliders() {
         redSlider.value = 0.5
         redSlider.maximumValue = 1

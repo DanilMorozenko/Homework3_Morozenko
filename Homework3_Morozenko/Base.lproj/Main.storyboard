@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uom-bj-yMq">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,11 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Homework3_Morozenko" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SettingsViewController" customModule="Homework3_Morozenko" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,31 +70,42 @@
                                 </constraints>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3XL-OD-UIz">
-                                <rect key="frame" x="158" y="252.5" width="131" height="31"/>
+                                <rect key="frame" x="158" y="252.5" width="104" height="31"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <connections>
                                     <action selector="redSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="rf4-4O-84C"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CJc-a6-9hQ">
-                                <rect key="frame" x="158" y="300.5" width="131" height="31"/>
+                                <rect key="frame" x="158" y="300.5" width="104" height="31"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <connections>
                                     <action selector="greenSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="ith-Dl-i2M"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pCr-ye-w7O">
-                                <rect key="frame" x="158" y="348.5" width="131" height="31"/>
+                                <rect key="frame" x="158" y="348.5" width="104" height="31"/>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                 <connections>
                                     <action selector="blueSliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="AlR-21-kVm"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IR-yS-6vp">
+                                <rect key="frame" x="133" y="440" width="56" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="zjq-Fz-9rI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CJc-a6-9hQ" secondAttribute="trailing" constant="33" id="66h-1b-D7K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CJc-a6-9hQ" secondAttribute="trailing" constant="60" id="66h-1b-D7K"/>
                             <constraint firstItem="U2m-Ns-ffg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="81" id="8vt-cN-5CX"/>
                             <constraint firstItem="LAI-m1-IXr" firstAttribute="top" secondItem="U2m-Ns-ffg" secondAttribute="bottom" constant="48" id="Czc-z0-t37"/>
                             <constraint firstItem="CJc-a6-9hQ" firstAttribute="centerY" secondItem="h7N-aI-kMm" secondAttribute="centerY" id="FQy-F2-5IL"/>
@@ -108,12 +118,12 @@
                             <constraint firstItem="3XL-OD-UIz" firstAttribute="top" secondItem="U2m-Ns-ffg" secondAttribute="bottom" constant="43.5" id="TB5-hV-jzZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U2m-Ns-ffg" secondAttribute="trailing" constant="33" id="TfC-tF-on2"/>
                             <constraint firstItem="pCr-ye-w7O" firstAttribute="centerY" secondItem="CuX-Ww-Gfj" secondAttribute="centerY" id="VeJ-9R-LBk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3XL-OD-UIz" secondAttribute="trailing" constant="33" id="WaM-pW-dJt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3XL-OD-UIz" secondAttribute="trailing" constant="60" id="WaM-pW-dJt"/>
                             <constraint firstItem="CJc-a6-9hQ" firstAttribute="top" secondItem="3XL-OD-UIz" secondAttribute="bottom" constant="18" id="Yov-uQ-WYj"/>
                             <constraint firstItem="3XL-OD-UIz" firstAttribute="leading" secondItem="OzD-dp-w3h" secondAttribute="trailing" constant="24.5" id="aog-2W-frk"/>
                             <constraint firstItem="pCr-ye-w7O" firstAttribute="top" secondItem="CJc-a6-9hQ" secondAttribute="bottom" constant="18" id="dSA-KN-4AM"/>
                             <constraint firstItem="3XL-OD-UIz" firstAttribute="centerY" secondItem="OzD-dp-w3h" secondAttribute="centerY" id="jpw-io-PCB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCr-ye-w7O" secondAttribute="trailing" constant="33" id="kyv-nb-cW9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCr-ye-w7O" secondAttribute="trailing" constant="60" id="kyv-nb-cW9"/>
                             <constraint firstItem="jjG-Lf-TMu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="tAC-Yl-pxh"/>
                         </constraints>
                     </view>
@@ -130,11 +140,58 @@
                         <outlet property="screenView" destination="U2m-Ns-ffg" id="UIR-kB-2TG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="71.651785714285708"/>
+            <point key="canvasLocation" x="1016.25" y="70.774647887323951"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="hFx-rr-6CR">
+            <objects>
+                <viewController id="Ml5-WD-N2b" customClass="MainViewController" customModule="Homework3_Morozenko" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kqp-rb-hQh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="v7x-5v-yX7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sLP-e0-hOK">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="fnj-x5-cah">
+                            <connections>
+                                <action selector="ButtonAction:" destination="Ml5-WD-N2b" id="wAd-ao-8zP"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="NTq-vj-bxO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ButtonOutlet" destination="fnj-x5-cah" id="oek-7y-tNA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0p-wt-YYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="71"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hIn-Vh-1od">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uom-bj-yMq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tod-V2-QXE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ml5-WD-N2b" kind="relationship" relationship="rootViewController" id="COR-vc-aaN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hR0-bC-tCX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-819.375" y="70.774647887323951"/>
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -152,6 +209,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
